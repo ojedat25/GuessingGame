@@ -1,0 +1,114 @@
+/*Project 5: Guessing Game
+Name: Toni Ojeda
+CSS file for guess.html
+*/
+/* General reset to remove default margins and paddings, set box-sizing to border-box, and apply a consistent font family */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: consolas, sans-serif;
+}
+
+/* Main body styling: using CSS Grid for layout and a warm background color */
+body {
+  display: grid;
+  grid-template-columns: 66% auto; /* Two columns: main (66%) and aside (remaining) */
+  grid-template-rows: auto; /* Single row layout */
+  grid-template-areas: 'main aside'; /* Named grid areas for easier element placement */
+  background-color: rgb(244, 184, 134); /* Soft orange background */
+  min-height: 100vh; /* Ensure the body covers full viewport height */
+}
+
+/* Main content styling */
+main {
+  z-index: 20; /* Ensures it appears above lower z-index elements */
+  display: flex;
+  justify-content: right; /* Align content to the right within the main section */
+  grid-area: main; /* Assigns to the "main" grid area */
+  align-items: center; /* Vertically centers content */
+}
+
+/* Sidebar styling */
+aside {
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  position: relative;
+  z-index: 20; /* Ensures it overlaps elements with lower z-index */
+  text-align: center;
+  grid-area: aside; /* Assigns to the "aside" grid area */
+}
+
+/*class to hide elements */
+.hidden {
+  display: none; /* Completely hides the element from the layout and view */
+}
+
+/*container styling */
+.containers {
+  display: flex;
+  flex-direction: column; /* Arrange children vertically */
+  background-color: rgba(208, 83, 83, 0.2); /* Semi-transparent red background */
+  backdrop-filter: blur(5px); /* Applies a blur effect to the background (e.g., glass effect) */
+  padding: 5%; /* Add padding around the container */
+  align-items: center; /* Center-align children horizontally */
+  border-radius: 20px; /* Rounded corners for a softer look */
+}
+
+/* Specific container for guess input and controls */
+#guessContainer {
+  width: 50%; /* Occupies half the width of its parent */
+  height: auto; /* Adjusts height based on content */
+  position: relative;
+  top: 10%; /* Moves the container down by 10% of its parent's height */
+  font-size: larger; /* Increases font size for better readability */
+  text-align: center; /* Center-aligns text */
+  gap: 10px; /* Adds spacing between child elements */
+}
+
+/* Styling for input fields within the guess container */
+#guessContainer input {
+  width: 70%; /* Makes input fields 70% of the container's width */
+  height: 2em; /* Fixed height for inputs */
+  border-radius: 10px; /* Rounded corners */
+  padding-left: 1%; /* Adds padding inside the input for text spacing */
+}
+
+/* Styling for buttons within the guess container */
+#guessContainer button {
+  padding: 1%; /* Adds internal spacing to buttons */
+  width: 10vw; /* Button width based on viewport width */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Specific container for displaying records */
+#recordsContainer {
+  display: flex;
+  flex-direction: column; /* Arrange child elements vertically */
+  position: relative;
+  justify-content: flex-start; /* Aligns items to the top */
+  width: 25vw; /* Fixed width based on viewport */
+  height: auto; /* Adjusts height to fit content */
+  top: -3vw; /* Slight upward shift */
+  justify-content: space-evenly; /* Distribute child elements evenly */
+}
+
+/* Styling for paragraphs within the records container */
+#recordsContainer p {
+  border-bottom: 2px solid black; /* Underline each paragraph for separation */
+}
+
+/* Styling for images */
+img {
+  z-index: 0; /* Ensures images appear behind other content */
+  position: fixed; /* Keeps image in a fixed position relative to the viewport */
+  left: 35vw; /* Align image 35% from the left of the viewport */
+  width: 35vw; /* Set image width relative to viewport */
+}
+
+/* Add hover effect to buttons for interactivity */
+button:hover {
+  transform: scale(1.1, 1.1); /* Slightly enlarges buttons on hover */
+}

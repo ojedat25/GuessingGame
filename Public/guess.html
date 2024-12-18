@@ -1,0 +1,42 @@
+<!-- Project 5: Guessing Game
+Name: Toni Ojeda
+Game Page HTML file -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+    <link rel="stylesheet" href="guess.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="guess.js" defer></script>
+  </head>
+  <body>
+    <img src="images/guessNumberLogo.png" alt="guessNumberLogo"><!--Got the image from here: https://www.pngwing.com/en/free-png-dvjsr-->
+    <main>
+      <!--Contains user input info-->
+      <div id="guessContainer" class="containers">
+        <!-- error message for when there is an issue with input -->
+        <p id="errorMsg"></p>
+        <label for="guessInput">Guess a number (1-100): </label>
+        <!--Input for user Guesses-->
+        <input type="number" name="guess" id="guessInput">
+        <!--Button to submit user Guesses-->
+        <button id="guessButton">Guess</button>
+        <!--Displays amount of guesses left-->
+        <p class="hidden">Guesses left: <span id="guessesLeft">7</span></p>
+        <!--Displays guesses from user-->
+        <p class="hidden">Your guesses: <span id="userGuesses"></span></p>
+        <!--Displays count of guesses done-->
+        <p class="hidden">Guess count: <span id="guessCount">0</span></p>
+        <!--Displays info on guess (Correct or Incorrect) if Incorrect then displays higher or lower-->
+        <p class="hidden" id="guessResponse"></p>
+      </div>
+    </main>
+    <aside>
+      <!--Contains records of different users-->
+      <h3 id="recordsName" style="position: relative; top: -3vw"></h3>
+      <div id="recordsContainer" class="containers"></div>
+    </aside>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+/*Project 5: Guessing Game
+Name: Toni Ojeda
+CSS file for index.html
+*/
+/* General reset to remove default margins and paddings, set box-sizing to border-box, and apply a consistent font family */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: consolas, sans-serif; /* A clean monospaced font */
+}
+
+/* Body styling: uses CSS Grid for layout and a warm background color */
+body {
+  display: grid;
+  grid-template-columns: auto; /* Single-column layout */
+  grid-template-rows: 20% auto; /* Header takes 20% of height, the rest is main content */
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  background-color: rgb(244, 184, 134); /* Warm orange background color */
+}
+
+/* Main section styling */
+main {
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  justify-content: space-evenly; /* Distribute items evenly with equal spacing */
+  align-items: center; /* Center items horizontally */
+}
+
+/* Container for start section */
+#startContainer {
+  width: 50%; /* Occupies half the width of its parent */
+  height: 20%; /* Fixed height relative to the parent */
+  display: flex;
+  flex-direction: column; /* Arrange child elements vertically */
+  flex-wrap: wrap; /* Allow wrapping for better responsiveness */
+  background-color: rgba(208, 83, 83, 0.3); /* Semi-transparent red background */
+  backdrop-filter: blur(5px); /* Adds a blur effect to the background (glass effect) */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  border-radius: 20px; /* Rounded corners for a smooth look */
+  gap: 10px; /* Spacing between child elements */
+}
+
+/* Header styling */
+header {
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  text-align: center; /* Center-align text */
+  align-items: center; /* Center items horizontally */
+  justify-content: space-around; /* Distribute child items with space around them */
+}
+
+/* Input field styling */
+input {
+  width: 50%; /* Makes input fields half the width of their parent */
+  height: 20%; /* Fixed height relative to the parent */
+  border-radius: 10px; /* Rounded corners */
+  padding-left: 1%; /* Adds padding for better text alignment */
+}
+
+/* Button styling */
+button {
+  width: 20%; /* Button width relative to its parent */
+  height: 20%; /* Fixed height relative to the parent */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Add hover effect to buttons for interactivity */
+button:hover {
+  transform: scale(1.1, 1.1); /* Slightly enlarges buttons on hover */
+}

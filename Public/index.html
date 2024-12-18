@@ -1,0 +1,44 @@
+<!-- Project 5: Guessing Game
+Name: Toni Ojeda
+Landing Page HTML file -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start</title>
+    <link rel="stylesheet" href="index.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!--Decided to input the JS code for the landing page here since it is very little code-->
+    <script>
+      $(main);
+      function main() {
+        $('#startButton').click(startGame);
+      }
+
+      function startGame() {
+        sessionStorage.setItem('user', `${$('#firstName').val()} ${$('#lastName').val()}`); //stores user info into the sessionStorage to be used later
+        window.open('guess.html', '_self'); //opens new window in the same tab
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <!--Header will describe how the game works-->
+      <h1 style="border-bottom: 2px solid black">Home Page</h1>
+      <p style="font-size: larger; width: 50%">
+        In this game a random number will be generated, your objective is to guess the number within 7 tries. Good Luck!
+      </p>
+    </header>
+    <main>
+      <!--Container for our input and buttons-->
+      <div id="startContainer">
+        <!--Inputs for name and last name that will be sent to sessionStorage to be retrieved later-->
+        <input type="text" name="firstName" id="firstName" placeholder="First Name">
+        <input type="text" name="lastName" id="lastName" placeholder="Last Name" >
+        <!-- Button to proceed to the game -->
+        <button id="startButton">Start</button>
+      </div>
+    </main>
+  </body>
+</html>
